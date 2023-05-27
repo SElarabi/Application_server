@@ -1,3 +1,5 @@
+/** @format */
+
 const express = require('express');
 const app = express();
 const low = require('lowdb');
@@ -26,31 +28,38 @@ let port = process.env.PORT || 3000;
 
 // return all users
 app.get('/data', function (req, res) {
-    res.send(db.get('users').value());
+	res.send(db.get('users').value());
 });
 
 // add user
 app.post('/add', function (req, res) {
-    var user = {
-        'name': req.body.name,
-        'dob': req.body.dob,
-        'email': req.body.email,
-        'username': req.body.username,
-        'password': req.body.password,
-        'phone': req.body.phone,
-        'streetaddress': req.body.streetaddress,
-        'citystatezip': req.body.citystatezip,
-        'latitude': req.body.latitude,
-        'longitude': req.body.longitude,
-        'avatar': faker.internet.avatar() 
-    }
-    db.get('users').push(user).write();
-    console.log(db.get('users').value());
-    res.send(db.get('users').value());
+	var user = {
+		name: req.body.name,
+		dob: req.body.dob,
+		email: req.body.email,
+		username: req.body.username,
+		password: req.body.password,
+		phone: req.body.phone,
+		streetaddress: req.body.streetaddress,
+		citystatezip: req.body.citystatezip,
+		latitude: req.body.latitude,
+		longitude: req.body.longitude,
+		avatar: faker.internet.avatar(),
+	};
+	db.get('users').push(user).write();
+	console.log(db.get('users').value());
+	res.send(db.get('users').value());
+});
+
+// remove user
+app.delete('/delete/:username', function (req, res) {
+	const username = req.params.username;
+	db.get('users').remove({ username: username }).write();
+	res.send(`The user with username ${username} has been deleted`);
 });
 
 // start server
 // -----------------------
 app.listen(port, function () {
-    console.log(`Running on port ${port}`);
+	console.log(`Running on port ${port}`);
 });
