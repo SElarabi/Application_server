@@ -47,17 +47,28 @@ app.post('/add', function (req, res) {
 		avatar: faker.internet.avatar(),
 	};
 	db.get('users').push(user).write();
-	console.log(db.get('users').value());
-	res.send(db.get('users').value());
+	res.send(user);
 });
 
-// remove user
+// remove user with username
 app.delete('/delete/:username', function (req, res) {
 	const username = req.params.username;
-	db.get('users').remove({ username: username }).write();
+	const removedUser = db.get('users').remove({ username: username }).write();
 	res.send(`The user with username ${username} has been deleted`);
 });
 
+// delete First User in the list
+app.delete('/delete', function (req, res) {
+	const users = db.get('users').value();
+
+	if (users.length > 0) {
+		const removedUser = users.shift(1);
+		db.set('users', users).write();
+		res.send(removedUser);
+	} else {
+		res.send('No users to delete');
+	}
+});
 // start server
 // -----------------------
 app.listen(port, function () {

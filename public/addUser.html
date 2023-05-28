@@ -14,6 +14,7 @@
 	></script>
 
 	<!-- user interface -->
+
 	<body>
 		<div style="padding: 50px">
 			<button
@@ -55,23 +56,6 @@
 				const dob =
 					date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 
-				// write value to console
-				// -------------------------
-				console.log(firstName);
-				console.log(lastName);
-				console.log(date);
-
-				console.log(name);
-				console.log(dob);
-				console.log(email);
-				console.log(username);
-				console.log(password);
-				console.log(phone);
-				console.log(streetaddress);
-				console.log(citystatezip);
-				console.log(latitude);
-				console.log(longitude);
-
 				// user object
 				const user = {
 					name,
@@ -99,9 +83,27 @@
 							console.log(res);
 							if (res.statusCode === 200) {
 								document.getElementById('status').innerHTML = `
-                        <b>Response: Status Code 200.</b> The HTTP 200 OK success status response code indicates that the HTTP request has succeeded.<br>
-                        User: ${name}<br>
-                        ${new Date()}
+								<b>Request has succeeded.<br>
+								${new Date()}
+								<div class="card" style="width: 18rem">
+									<img src="${res.body.avatar}" class="card-img-top" alt="...">
+									<div class="card-body">
+										<h5 class="card-title">${name}</h5>
+										<p class="card-text">
+											DOB: ${dob}<br>
+											email: ${email}<br>
+											username: ${username}<br>
+											password: ${password}<br>
+											phone: ${phone}<br>
+											streetaddress: ${streetaddress}<br>
+											citystatezip: ${citystatezip}<br>
+											lat/lon: ${latitude},${longitude}                        
+											</p>
+										<a href="/" class="btn btn-primary">Home Page</a>
+									</div>
+								</div>
+                        
+                  
                     `;
 							}
 						}
