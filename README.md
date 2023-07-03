@@ -21,6 +21,11 @@ npm start
 The server will start running, and you will see a message indicating the port it is listening on port 3000.
 open your browser on 
 [localhost:3000](http://localhost:3000/)
+* The application http_server.js will point to index.html from **`public`** directory.
+## Static Files
+* The server serves static files from the **`public`** directory.
+* Any files placed in the **`public`** directory can be accessed via the server's URL.
+
 
 # API Endpoints
 ## Get All Users
@@ -62,7 +67,4 @@ open your browser on
     * latitude
     * longitude
     * avatar: A randomly generated avatar URL using the **`@faker-js/faker`** package.
-## Static Files
-* The server serves static files from the **`public`** directory.
-* Any files placed in the **`public`** directory can be accessed via the server's URL.
 
