@@ -18,7 +18,9 @@ To start the server, run the following command:
 ```sql
 npm start
 ```
-The server will start running, and you will see a message indicating the port it is listening on.
+The server will start running, and you will see a message indicating the port it is listening on port 3000.
+open your browser on 
+[localhost:3000](http://localhost:3000/)
 
 # API Endpoints
 ## Get All Users
