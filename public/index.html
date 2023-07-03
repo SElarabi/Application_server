@@ -11,7 +11,9 @@
 			font-size: 2em;
 		}
 	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.3/superagent.min.js"></script>
 	<body>
+		<div id="header"></div>
 		<main
 			role="main"
 			class="container"
@@ -33,13 +35,7 @@
 						>Delete First user In the List</a
 					>
 				</li>
-				<li class="nav-item">
-					<a
-						class="nav-link"
-						href="addUsers.html"
-						>Add Users</a
-					>
-				</li>
+
 				<li class="nav-item">
 					<a
 						class="nav-link"
@@ -54,7 +50,42 @@
 						>List all Users (raw)</a
 					>
 				</li>
+				<li class="nav-item">
+					<a
+						class="nav-link"
+						href="allUsersSlides.html"
+						>Users List Slide Show
+					</a>
+				</li>
 			</ul>
 		</main>
+		<script>
+			function data() {
+				const url = '/data';
+				const header = document.getElementById('header');
+				superagent.get(url).end(function (err, res) {
+					if (err) {
+						console.log(err);
+					} else {
+						html = '<div class="grid-container">';
+						// res.body is he data stored in the db.json
+						console.log(res.body.length);
+						if (res.body.length === 0) {
+							html += `
+								<h1 class="display-4 bg-warning text-center"> THE USER LIST IS EMPTY, ADD USERS </h1>
+								</div>
+						`;
+						} else {
+							html += `
+								<h1 class="display-4 bg-info text-center"> TOTAL USERS IN THE LIST IS = ${res.body.length}</h1>
+								</div>
+						`;
+						}
+					}
+					header.innerHTML = html;
+				});
+			}
+			data();
+		</script>
 	</body>
 </html>

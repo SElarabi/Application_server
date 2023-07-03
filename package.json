@@ -6,7 +6,7 @@
 	"scripts": {
 		"build": "npm install",
 		"start": "node http_server.js",
-		" dev ": "nodemon http_server.js",
+		"dev": "nodemon http_server.js",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"author": "eddie.larabi@gmail.com",
