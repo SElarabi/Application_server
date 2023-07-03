@@ -1,3 +1,69 @@
 {
-  "users": []
+  "users": [
+    {
+      "name": "Jade Gislason",
+      "dob": "1977-10-2",
+      "email": "Jade_Gislason27@hotmail.com",
+      "username": "Jade_Gislason",
+      "password": "u88lt7mv8y325VE",
+      "phone": "1-357-730-7549 x24773",
+      "streetaddress": "1522 Kertzmann Ranch",
+      "citystatezip": "Rolfsonland, AL 27015",
+      "latitude": "12.2162",
+      "longitude": "-3.8409",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/462.jpg"
+    },
+    {
+      "name": "Kelton Erdman",
+      "dob": "1969-3-28",
+      "email": "Kelton76@hotmail.com",
+      "username": "Kelton_Erdman56",
+      "password": "RO3NtB_fBVBAgV0",
+      "phone": "346-571-1731",
+      "streetaddress": "7909 Hagenes Corners",
+      "citystatezip": "Oberbrunnertown, KS 87047-4836",
+      "latitude": "29.9965",
+      "longitude": "-17.3912",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/1110.jpg"
+    },
+    {
+      "name": "Mr. Dax O'Hara",
+      "dob": "1960-8-12",
+      "email": "Dax59@hotmail.com",
+      "username": "Dax.OHara",
+      "password": "QsXaNvFZ1Kq_ZDt",
+      "phone": "490.762.1890 x629",
+      "streetaddress": "30155 Sonny Forest",
+      "citystatezip": "Colinside, NE 26511-5840",
+      "latitude": "-61.9490",
+      "longitude": "23.9182",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/791.jpg"
+    },
+    {
+      "name": "Mathilde Lowe",
+      "dob": "1972-1-22",
+      "email": "Mathilde28@yahoo.com",
+      "username": "Mathilde80",
+      "password": "WZ2_bW18yX2uC9a",
+      "phone": "(612) 491-6246",
+      "streetaddress": "7483 Alessia Square",
+      "citystatezip": "Hoegershire, NH 07300",
+      "latitude": "-26.6655",
+      "longitude": "120.6498",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/380.jpg"
+    },
+    {
+      "name": "Ernie Denesik",
+      "dob": "1973-3-2",
+      "email": "Ernie.Denesik@hotmail.com",
+      "username": "Ernie16",
+      "password": "lrhfYVUW9aTe35K",
+      "phone": "409-693-1694 x2131",
+      "streetaddress": "040 Jerrod Villages",
+      "citystatezip": "East Wilfridburgh, RI 65467-5150",
+      "latitude": "34.1269",
+      "longitude": "112.1658",
+      "avatar": "https://cloudflare-ipfs.com/ipfs/Qmd3W5DuhgHirLHGVixi6V76LhCkZUz6pnFt5AJBiyvHye/avatar/168.jpg"
+    }
+  ]
 }

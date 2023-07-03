@@ -20,10 +20,10 @@
 			<button
 				type="button"
 				class="btn btn-primary"
-				style="font-size: 3em"
+				style="font-size: 1em"
 				onclick="remove()"
 			>
-				Delete First User
+				DELETE FIRST USER IN THE LIST
 			</button>
 			<div id="status"></div>
 		</div>
@@ -42,7 +42,7 @@
 					} else {
 						// user object
 						const user = res.body;
-						console.log(user);
+
 						const statusDiv = document.getElementById('status');
 
 						if (user === null && res.statusCode === 200) {
@@ -51,9 +51,11 @@
 			    					 <h1><b>${res.text} </b></h1>`;
 						} else {
 							statusDiv.innerHTML = `
-                            <b>Request has succeeded.<br>
+                           <br>
+													  <h4>THIS USER IS BEEN DELETED </h4>
+														<br>
 
-							
+
 								<div class="card" style="width: 18rem">
 									<img src="${user.avatar}" class="card-img-top" alt="...">
 									<div class="card-body">
@@ -80,7 +82,3 @@
 		</script>
 	</body>
 </html>
-<!-- Date of Birth: ${user.dob}\n Email: ${user.email}\n Username: ${user.username}\n
-Password: ${user.password}\n Phone: ${user.phone}\n Street Address:
-${user.streetaddress}\n City, State, Zip: ${user.citystatezip}\n Latitude:
-${user.latitude}\n Longitude: ${user.longitude}\n -->

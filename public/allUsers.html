@@ -20,9 +20,9 @@
 				type="button"
 				class="btn btn-primary"
 				style="font-size: 3em"
-				onclick="data()"
+				onclick="redirectToPage()"
 			>
-				Show All Data</button
+				Slide show</button
 			><br />
 			<div id="status"></div>
 		</div>
@@ -65,6 +65,11 @@
 					status.innerHTML = html;
 				}
 			});
+		}
+		data();
+		// Function to redirect to another HTML file
+		function redirectToPage() {
+			window.location.href = 'allUsersSlides.html';
 		}
 	</script>
 </html>
