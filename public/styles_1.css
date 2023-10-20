@@ -10,7 +10,22 @@
 	left: 50%;
 	transform: translate(-50%, -50%);
 	width: 80%;
-	max-width: 800px;
+	max-width: 400px;
 	background-color: #1765b2;
 	padding: 20px;
+}
+@keyframes blink {
+	0% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.blinking-text {
+	animation: blink 1s infinite;
 }
