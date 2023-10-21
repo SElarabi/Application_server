@@ -3,15 +3,48 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.3/superagent.min.js"></script>
 
-<body style="padding:50px">
+<body style="
+			padding: 1rem;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background-image: url('MITBannerHomepage.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		">
+        <!-- MIT Certification banner-->
+	<div style="background-color: rgb(3, 32, 32)">
+		<p class="text-center text-decoration-underline" style="color: rgb(250, 255, 254)">
+			MIT Coding Certification: Full Stack Development with MERN - October 2022
+		</p>
+	</div>
+	<!-- top of  page -->
+	<div style="
+				background-image: url('MITBannerHomepage.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+			">
+		<h1 class="display-1 text-center mb-5 text-decoration-underline" style="color: rgb(250, 255, 254)">
+			Node.js HTTP Server Application
+		</h1>
+	</div>
+	<br />
     <div>
         <a href="/" class="btn btn-primary">Home Page</a>
         <p>Click on Show All Data to make a call request to get all data from server </p>
     </div>
     <div style="padding:50px">
         <button class="btn btn-primary" style="font-size: 3em;" onclick="data()">Show All Data</button><br>
-        <div id="status"></div>
+        <div id="status" style="background-color: rgb(176, 225, 215)"></div>
         </main>
+        </div>
+        <footer style="color: aliceblue; background-color: rgb(3, 32, 32); margin-top: auto">
+		<div class="container">
+			<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
+		</div>
+	</footer>
         <script>
 
             function data ()

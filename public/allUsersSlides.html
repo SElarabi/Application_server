@@ -17,7 +17,45 @@
 			href="styles_1.css"
 		/>
 	</head>
-	<body style="padding: 50px">
+	<body
+		style="
+			padding: 1rem;
+			min-height: 100vh;
+			display: flex;
+			flex-direction: column;
+			background-image: url('MITBannerHomepage.png');
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-position: center center;
+		"
+	>
+		<!-- MIT Certification banner-->
+		<div style="background-color: rgb(3, 32, 32)">
+			<p
+				class="text-center text-decoration-underline"
+				style="color: rgb(250, 255, 254)"
+			>
+				MIT Coding Certification: Full Stack Development with MERN - October 2022
+			</p>
+		</div>
+		<!-- top of  page -->
+		<div
+			style="
+				background-image: url('MITBannerHomepage.png');
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center center;
+			"
+		>
+			<h1
+				class="display-1 text-center mb-5 text-decoration-underline"
+				style="color: rgb(250, 255, 254)"
+			>
+				Node.js HTTP Server Application
+			</h1>
+		</div>
+		<br />
+
 		<!-- user interface -->
 		<div
 			id="slideCanvas"
@@ -51,6 +89,13 @@
 			</button>
 		</div>
 
+		<footer
+			style="color: aliceblue; background-color: rgb(3, 32, 32); margin-top: auto"
+		>
+			<div class="container">
+				<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
+			</div>
+		</footer>
 		<!-- JavaScript -->
 		<script>
 			// query server and list users
@@ -70,25 +115,27 @@
 							const isActive = index === 0 ? 'active' : '';
 							carouselInner.innerHTML += `
 												<div class="carousel-item ${isActive}">
-													<div class="card" style="min-width: 18rem;">
-                          	<img class="card-img-top" src="${user.avatar}" alt="Card image cap">
-                        		<div class="card-body">
-                            	<h5 class="card-title">${user.name}</h5>
-                            	<p class="card-text">
-                                DOB: ${user.dob}<br>
-                                email: ${user.email}<br>
-                                username: ${user.username}<br>
-                                password: ${user.password}<br>
-                                phone: ${user.phone}<br>
-                                streetaddress: ${user.streetaddress}<br>
-                                citystatezip: ${user.citystatezip}<br>
-                                lat/lon: ${user.latitude},${user.longitude}
-                            	</p>
-															
-												  </div>
-													<a href="/" class="btn btn-primary">Home Page</a>
-                      </div>
-						
+    <div class="card" style="min-width: 18rem;">
+        <img class="card-img-top" src="${user.avatar}" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">${user.name}</h5>
+            <p class="card-text">
+                DOB: ${user.dob}<br>
+                email: ${user.email}<br>
+                username: ${user.username}<br>
+                password: ${user.password}<br>
+                phone: ${user.phone}<br>
+                streetaddress: ${user.streetaddress}<br>
+                citystatezip: ${user.citystatezip}<br>
+                lat/lon: ${user.latitude},${user.longitude}
+            </p>
+        </div>
+        <a href="/" class="btn btn-primary">Home Page</a><br>
+        <a class="nav-link btn btn-primary" href="allUsers.html">ALL USERS</a>
+    </div>
+		
+</div>
+
 							`;
 							console.log('user ===', user, '  index ===>', index);
 						});
