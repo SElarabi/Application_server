@@ -42,6 +42,7 @@
 	<div>
 		<a href="/" class="btn btn-primary">Home Page</a>
 	</div>
+	<div id="header"></div>
 	<div class='text-center' style="padding: 1%">
 		<button type="button" class="btn btn-primary" style="font-size: 3em" onclick="add()">
 			Add User
@@ -55,6 +56,8 @@
 			<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
 		</div>
 	</footer>
+	<script src='dataAdd.js'></script>
+	<script src='data.js'></script>
 	<script>
 		function add ()
 		{
@@ -111,6 +114,8 @@
 					} else {
 						console.log( res );
 						if ( res.statusCode === 200 ) {
+							data();
+							
 							document.getElementById( 'status' ).innerHTML = `
 							<div class="border border-success p-2 mb-2">
 								<div class=" container text-center opacity-75" style='padding: 20px'>
