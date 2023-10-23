@@ -13,6 +13,7 @@
 	max-width: 400px;
 	background-color: #1765b2;
 	padding: 20px;
+	-webkit-text-fill-color: red;
 }
 @keyframes blink {
 	0% {

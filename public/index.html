@@ -88,20 +88,20 @@
 				<h1 class="display-4 text-decoration-underline">Navigation</h1>
 				<ul class="nav flex-column">
 					<li class="nav-item">
-						<a class="nav-link active" href="addUser.html">Add User</a>
+						<a class="nav-link  active" href="addUser.html"><h1 class="display-6 text-decoration-underline"> Add User</h1></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link active" href="deleteFirstUser.html">Delete First user In the List</a>
+						<a class="nav-link active" href="deleteFirstUser.html"><h1 class="display-6 text-decoration-underline">Delete First user In the List</h1></a>
 					</li>
 
 					<li class="nav-item">
-						<a class="nav-link" href="allUsers.html">List All Users (formatted)</a>
+						<a class="nav-link" href="allUsers.html"><h1 class="display-6 text-decoration-underline">List All Users (formatted)</h1></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="data.html">List all Users (raw)</a>
+						<a class="nav-link" href="data.html"><h1 class="display-6 text-decoration-underline">List all Users (raw)</h1></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" href="allUsersSlides.html">Users List Slide Show
+						<a class="nav-link" href="allUsersSlides.html"><h1 class="display-6 text-decoration-underline">Users List Slide Show</h1>
 						</a>
 					</li>
 				</ul>
@@ -165,37 +165,8 @@
 			<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
 		</div>
 	</footer>
-	<script src='data.js'></script>
-	<!-- <script>
-		function data ()
-		{
-			const url = '/data';
-			const header = document.getElementById( 'header' );
-			superagent.get( url ).end( function ( err, res )
-			{
-				if ( err ) {
-					console.log( err );
-				} else {
-					html = '<div class="grid-container">';
-					// res.body is he data stored in the db.json
-					console.log( res.body.length );
-					if ( res.body.length === 0 ) {
-						html += `
-								<h1 class="display-4 bg-warning text-center"> THE USER LIST IS EMPTY, ADD USERS </h1>
-								</div>
-						`;
-					} else {
-						html += `
-								<h1 class="display-4 bg-info text-center"> TOTAL USERS IN THE LIST IS = ${ res.body.length }</h1>
-								</div>
-						`;
-					}
-				}
-				header.innerHTML = html;
-			} );
-		}
-		data();
-	</script> -->
+	<script src='getData.js'></script>
+	
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
 		integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"

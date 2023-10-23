@@ -56,8 +56,8 @@
 			<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
 		</div>
 	</footer>
-	<script src='dataAdd.js'></script>
-	<script src='data.js'></script>
+	
+	<script src='getData.js'></script>
 	<script>
 		function add ()
 		{
@@ -114,7 +114,7 @@
 					} else {
 						console.log( res );
 						if ( res.statusCode === 200 ) {
-							data();
+							getData();
 							
 							document.getElementById( 'status' ).innerHTML = `
 							<div class="border border-success p-2 mb-2">

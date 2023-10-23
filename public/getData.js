@@ -1,6 +1,6 @@
 /** @format */
 
-function data() {
+function getData() {
 	const url = '/data';
 	const header = document.getElementById('header');
 	superagent.get(url).end(function (err, res) {
@@ -25,4 +25,4 @@ function data() {
 		header.innerHTML = html;
 	});
 }
-data();
+getData();

@@ -7,6 +7,10 @@
 		rel="stylesheet"
 		href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
 	/>
+	<link
+		rel="stylesheet"
+		href="styles_1.css"
+	/>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.3/superagent.min.js"></script>
 	<script
 		src="faker.min.js"
@@ -81,7 +85,7 @@
 				<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
 			</div>
 		</footer>
-		<script src="data.js"></script>
+		<script src="getData.js"></script>
 
 		<script>
 			function remove() {
@@ -105,7 +109,7 @@
 			    				 <br>
 			    					 <h1><b>${res.text} </b></h1>`;
 						} else {
-							data();
+							getData();
 							statusDiv.innerHTML = `
                            <br>
 													  
