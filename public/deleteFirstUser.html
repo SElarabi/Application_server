@@ -88,6 +88,7 @@
 			</div>
 		</footer>
 		<script src="getData.js"></script>
+		<script src='ResolveIPFSUrl.js'></script>
 
 		<script>
 			function remove() {
@@ -131,7 +132,7 @@
 
 
 								<div class="card" style="width: 18rem">
-									<img src="${user.avatar}" class="card-img-top" alt="...">
+									<img src="${resolveIPFSUrl(user.avatar)}" class="card-img-top" alt="...">
 									<div class="card-body">
 										<h5 class="card-title">${user.name}</h5>
 										<p class="card-text">

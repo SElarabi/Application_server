@@ -6,8 +6,10 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 <link rel="stylesheet" href="styles_1.css" />
-<script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.3/superagent.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/superagent/3.8.3/superagent.min.js"></script> -->
 <script src="faker.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=WeakRef,BigInt"></script>
+<script src="https://cdn.jsdelivr.net/npm/superagent"></script>
 
 <!-- user interface -->
 
@@ -51,44 +53,45 @@
 
 	<div class='text-center' id="status"></div>
 	</div>
-<footer style="color: aliceblue; background-color: rgb(3, 32, 32); margin-top: auto">
+	<footer style="color: aliceblue; background-color: rgb(3, 32, 32); margin-top: auto">
 		<div class="container">
 			<p class="text-center mb-0">Copyright &copy; 2023 S.E.Larabi</p>
 		</div>
 	</footer>
-	
+
 	<script src='getData.js'></script>
+	<script src='ResolveIPFSUrl.js'></script>
 	<script>
-		function add ()
-		{
+		function add() {
+
 			// setup
-			const firstName = faker.name.firstName();
-			const lastName = faker.name.lastName();
-			const date = faker.date.past(
+			const firstName=faker.name.firstName();
+			const lastName=faker.name.lastName();
+			const date=faker.date.past(
 				50,
-				new Date( 'Sat Sep 20 1992 21:35:02 GMT+0200 (CEST)' )
+				new Date('Sat Sep 20 1992 21:35:02 GMT+0200 (CEST)')
 			);
 
 			// random data
-			const name = faker.name.findName( firstName, lastName );
-			const email = faker.internet.email( firstName, lastName );
-			const username = faker.internet.userName( firstName, lastName );
-			const password = faker.internet.password();
-			const phone = faker.phone.phoneNumber();
-			const streetaddress = faker.address.streetAddress();
-			const citystatezip =
-				faker.address.city() +
-				', ' +
-				faker.address.stateAbbr() +
-				' ' +
+			const name=faker.name.findName(firstName,lastName);
+			const email=faker.internet.email(firstName,lastName);
+			const username=faker.internet.userName(firstName,lastName);
+			const password=faker.internet.password();
+			const phone=faker.phone.phoneNumber();
+			const streetaddress=faker.address.streetAddress();
+			const citystatezip=
+				faker.address.city()+
+				', '+
+				faker.address.stateAbbr()+
+				' '+
 				faker.address.zipCode();
-			const latitude = faker.address.latitude();
-			const longitude = faker.address.longitude();
-			const dob =
-				date.getFullYear() + '-' + ( date.getMonth() + 1 ) + '-' + date.getDate();
+			const latitude=faker.address.latitude();
+			const longitude=faker.address.longitude();
+			const dob=
+				date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
 
 			// user object
-			const user = {
+			const user={
 				name,
 				dob,
 				email,
@@ -102,27 +105,27 @@
 			};
 
 			// post user
-			const url = '/add';
-			//const url = process.env.PORT + 'add';
+			const url='/add';
+			// const url = process.env.PORT + 'add';
 			superagent
-				.post( url )
-				.send( user )
-				.end( function ( err, res )
-				{
-					if ( err ) {
-						console.log( err );
+				.post(url)
+				.send(user)
+				.end(function(err,res) {
+					if(err) {
+						alert('An error occurred while fetching the data. Please try again later.');
 					} else {
-						console.log( res );
-						if ( res.statusCode === 200 ) {
+
+						if(res.statusCode===200) {
+							const avatarUrl = resolveIPFSUrl(res.body.avatar);
 							getData();
 							
-							document.getElementById( 'status' ).innerHTML = `
+							document.getElementById('status').innerHTML=`
 							<div class="border border-success p-2 mb-2">
 								<div class=" container text-center opacity-75" style='padding: 20px'>
 									<div class="row ">
 										<p>
-										 <h1 class="display-5">
-											${ new Date() }
+										 <h1 class="display-5" style="color:white">
+											${new Date()}
 											<br>
 											 <div class="badge bg-info text-wrap blinking-text" style="width: 50%;">
  										 			The API request was executed successfully, resulting in the successful addition of the following new user
@@ -133,18 +136,18 @@
 									
 									  <br></br>
 									 <div class="card text-center" style="width: 18rem">
-										 <img src="${ res.body.avatar }" class="card-img-top" alt="...">
+										 <img src="${avatarUrl}" class="card-img-top" alt="...">
 										 <div class="card-body">
-										 <h5 class="card-title">${ name }</h5>
+										 <h5 class="card-title">${name}</h5>
 										 <p class="card-text">
-											 DOB: ${ dob }<br>
-											 email: ${ email }<br>
-											 username: ${ username }<br>
-											 password: ${ password }<br>
-											 phone: ${ phone }<br>
-											 streetaddress: ${ streetaddress }<br>
-											 citystatezip: ${ citystatezip }<br>
-											 lat/lon: ${ latitude },${ longitude }                        
+											 DOB: ${dob}<br>
+											 Email: ${email}<br>
+											 Username: ${username}<br>
+											 Password: ${password}<br>
+											 Phone: ${phone}<br>
+											 Street Address: ${streetaddress}<br>
+											 City State Zip: ${citystatezip}<br>
+											 lat/lon: ${latitude},${longitude}                        
 											 </p>
 										 <a href="/" class="btn btn-primary">Home Page</a>
 										</div>
@@ -163,7 +166,7 @@
                     `;
 						}
 					}
-				} );
+				});
 		}
 		// update a display
 	</script>
