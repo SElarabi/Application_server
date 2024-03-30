@@ -2,9 +2,9 @@
 
 # Application \_server
 
-<a href="https://simple-data-application-server.onrender.com"/>Application Server Demo</a>
+<a href="https://simple-data-application-server.onrender.com" target="_blank"/>Application Server Demo</a>
 
-This is a simple Node.js HTTP server application built using Express.js and the MERN stack. It provides an API for managing users in a data store and serves static files from the public directory.
+>-This is a simple Node.js HTTP server application,meticulously crafted with Express.js and adhering to the principles of the MERN (MongoDB, Express.js, React, Node.js) stack. It offers a comprehensive API for seamless user management, interfacing with a data store, and efficiently serves static assets from the designated public directory.
 
 ## Setup
 
