@@ -2,9 +2,9 @@
 
 # Application \_server
 
-<a href="https://simple-data-application-server.onrender.com"/>Application Server Demo</a>
+<a href="https://simple-data-application-server.onrender.com" target="_blank"/>Application Server Demo</a>
 
-This is a simple Node.js HTTP server application built using Express.js and the MERN stack. It provides an API for managing users in a data store and serves static files from the public directory.
+>-This is a simple Node.js HTTP server application,meticulously crafted with Express.js and adhering to the principles of the MERN (MongoDB, Express.js, React, Node.js) stack. It offers a comprehensive API for seamless user management, interfacing with a data store, and efficiently serves static assets from the designated public directory.
 
 ## Setup
 
@@ -21,16 +21,14 @@ The server listens on the port specified by the PORT environment variable. If th
 
 ##
 
-If you are using nodemon tool, the snippet { "ignore": ["db.json"] } in a nodemon.json file serves as a configuration option for the nodemon tool. It specifies a file or pattern that should be ignored by nodemon when it watches for changes and automatically restarts your Node.js application.
+>- If you are using nodemon tool, the snippet { "ignore": ["db.json"] } in a nodemon.json file serves as a configuration option for the nodemon tool.
+>- It specifies a file or pattern that should be ignored by nodemon when it watches for changes and automatically restarts your Node.js application.
 Here's what each part of the snippet means:
+> >- "ignore": This is a key in the JSON object that indicates you are specifying files or patterns to be ignored by nodemon.
+> >- ["db.json"]: This is an array of file names or patterns that you want nodemon to ignore. 
+>- In this case, it's specifying that nodemon should ignore any file named "db.json" and should be excluded from the watch list since this data file is updated frequently but doesn't require your Node.js application to restart when it changes.
 
-"ignore": This is a key in the JSON object that indicates you are specifying files or patterns to be ignored by nodemon.
 
-["db.json"]: This is an array of file names or patterns that you want nodemon to ignore. In this case, it's specifying that nodemon should ignore any file named "db.json."
-
-When nodemon is running, it monitors your project's files for changes, and when it detects a change in a file, it automatically restarts your Node.js application. However, you may have certain files or directories that you don't want nodemon to watch. In your case, "db.json" is one such file that you want to exclude from the watchlist. This can be helpful, for example, if "db.json" is a data file that is updated frequently but doesn't require your Node.js application to restart when it changes.
-
-By specifying "ignore": ["db.json"], you ensure that changes to "db.json" won't trigger a restart of your Node.js application when using nodemon.
 
 ## Usage
 
